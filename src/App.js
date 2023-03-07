@@ -4,14 +4,14 @@ import FacebookLogin from "react-facebook-login";
 import { User } from "./pages/User";
 
 function App() {
-  
+
   const responseFacebook = (response) => {
-    localStorage.setItem("fb_token",response.accessToken)
-    localStorage.setItem("user_id",response.userID)
+    localStorage.setItem("fb_token", response.accessToken)
+    localStorage.setItem("user_id", response.userID)
   };
 
-  if(localStorage.getItem("user_id")){
-    return <User/>
+  if (localStorage.getItem("user_id")) {
+    return <User />
   }
 
   return (
@@ -22,6 +22,7 @@ function App() {
           autoLoad={false}
           fields="name,email,picture"
           callback={responseFacebook}
+          scope="public_profile,email,instagram_basic,pages_show_list,pages_read_engagement"
         />
       </header>
     </div>
