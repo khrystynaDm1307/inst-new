@@ -7,6 +7,7 @@ function App() {
   const user = localStorage.getItem("user_id")
 
   const responseFacebook = (response) => {
+    console.log(response)
     localStorage.setItem("fb_token", response.accessToken)
     localStorage.setItem("user_id", response.userID)
   };
