@@ -4,13 +4,14 @@ import FacebookLogin from "react-facebook-login";
 import { User } from "./pages/User";
 
 function App() {
+  const user = localStorage.getItem("user_id")
 
   const responseFacebook = (response) => {
     localStorage.setItem("fb_token", response.accessToken)
     localStorage.setItem("user_id", response.userID)
   };
 
-  if (localStorage.getItem("user_id")) {
+  if (user) {
     return <User />
   }
 
