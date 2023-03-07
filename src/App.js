@@ -1,11 +1,19 @@
 
 import "./App.css";
 import FacebookLogin from "react-facebook-login";
+import { User } from "./pages/User";
 
 function App() {
+  
   const responseFacebook = (response) => {
-    console.log(response);
+    localStorage.setItem("fb_token",response.accessToken)
+    localStorage.setItem("user_id",response.userID)
   };
+
+  if(localStorage.getItem("user_id")){
+    return <User/>
+  }
+
   return (
     <div className="App">
       <header className="App-header">
