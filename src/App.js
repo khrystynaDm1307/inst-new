@@ -24,7 +24,7 @@ function App() {
           autoLoad={false}
           fields="name,email,picture"
           callback={responseFacebook}
-          scope="public_profile,email,instagram_basic,pages_show_list,pages_read_engagement"
+          scope="public_profile,email,instagram_basic,pages_show_list,pages_read_engagement,instagram_manage_insights"
         />
       </header>
     </div>
