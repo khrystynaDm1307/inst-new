@@ -2,32 +2,25 @@
 import "./App.css";
 import FacebookLogin from "react-facebook-login";
 import { User } from "./pages/User";
+import { Route, Routes } from "react-router-dom";
+import Accounts from "./pages/Accounts";
+import Account from "./pages/Account";
+import Media from "./pages/Media";
+import MediaItem from "./pages/Media-Item";
 
 function App() {
-  const user = localStorage.getItem("user_id")
-
-  const responseFacebook = (response) => {
-    console.log(response)
-    localStorage.setItem("fb_token", response.accessToken)
-    localStorage.setItem("user_id", response.userID)
-  };
-
-  if (user) {
-    return <User />
-  }
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <FacebookLogin
-          appId="371911896837928"
-          autoLoad={false}
-          fields="name,email,picture"
-          callback={responseFacebook}
-          scope="public_profile,email,instagram_basic,pages_show_list,pages_read_engagement,instagram_manage_insights"
-        />
-      </header>
-    </div>
+
+    <Routes>
+      <Route path="/" element={<User />} >
+        <Route path={`accounts`} element={<Accounts />} />
+        <Route path={`accounts/:id`} element={<Account />} />
+        <Route path={`ig-accounts/:id`} element={<Media />} />
+        <Route path={`media/:id`} element={<MediaItem />} />
+      </Route>
+
+    </Routes>
   );
 }
 
