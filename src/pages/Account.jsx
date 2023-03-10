@@ -52,7 +52,7 @@ export default function Account() {
 
 
                 <Grid item xs={1}>
-                    <Link to={`/ig-accounts/${data.id}`}>
+                    <Link to={`/ig-accounts/${data.id}/media`}>
                         <Paper sx={{ p: 2 }}>
                             <Typography>media_count</Typography>
                             <Typography fontSize="40px">{data.media_count}</Typography>
@@ -65,7 +65,14 @@ export default function Account() {
                         <Typography fontSize="14px">{data.biography}</Typography>
                     </Paper>
                 </Grid>
+                <Grid item xs={2}>
+                <Link to={`/ig-accounts/${data.id}/stories`}>
+                        <Paper sx={{ p: 2 }}>
+                            <Typography>Stories</Typography>
+                            <Typography fontSize="40px">{data.media_count}</Typography>
+                        </Paper></Link>
 
+                </Grid>
             </Grid>
         </Stack>
             : <p>No Insta account connected to that page</p>}

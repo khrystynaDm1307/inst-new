@@ -34,7 +34,7 @@ export function User() {
                     autoLoad={false}
                     fields="name,email,picture"
                     callback={responseFacebook}
-                    scope="public_profile,email,instagram_basic,pages_show_list,pages_read_engagement,instagram_manage_insights,read_insights,instagram_shopping_tag_products,pages_read_user_content"
+                    scope="public_profile,email,instagram_basic,pages_show_list,pages_read_engagement,instagram_manage_insights,read_insights,instagram_shopping_tag_products,pages_read_user_content,pages_manage_metadata"
                 />
             </header>
         </div>
