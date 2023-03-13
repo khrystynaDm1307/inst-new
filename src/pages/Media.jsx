@@ -35,7 +35,7 @@ export default function Media() {
                 {data.map(media => <Grid item xs={1}>
                     <Link to={`/media/${media.id}`}>
                         <Paper sx={{ p: 2, height: 400, overflow: "hidden" }}>
-                            <img src={media.media_url} alt="" style={{ maxWidth: 200 }} />
+                            <img src={media.media_product_type !== "REELS" ? media.media_url : media.thumbnail_url} alt="" style={{ maxWidth: 200 }} />
                             <Stack>
                                 <Typography fontSize="14px" mb={2} maxHeight={100} overflow="hidden">{media.caption}</Typography>
                                 <Divider />

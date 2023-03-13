@@ -44,7 +44,7 @@ export default function MediaItem() {
                     >
                         {data.caption}
                     </Typography>
-                    <img src={data.media_url} alt="" style={{ maxWidth: 200 }} />
+                    <img src={data.media_product_type !== "REELS" ? data.media_url : data.thumbnail_url} alt="" style={{ maxWidth: 200 }} />
                     <Grid container rowSpacing={2} columnSpacing={2} columns={2}>
                         {insights?.map((insight) => <Grid item xs={1}>
                             <Paper sx={{ p: 2 }}>
